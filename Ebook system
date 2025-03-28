@@ -1,0 +1,11 @@
+
+# Build the Docker image
+docker-compose build
+# Start the services
+docker-compose up -d
+# Wait for the application to start
+sleep 10
+# Perform smoke tests
+curl -s http://localhost:3000 | grep "BookNest"
+# If the smoke test passes, exit successfully
+exit 0
